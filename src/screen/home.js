@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {  View,Text,ImageBackground,Image,ScrollView,TouchableOpacity,StatusBar} from 'react-native';
-import Carousel from 'react-native-snap-carousel'
 
 import bg from '../assets/bgHome.png'
 import notip from '../assets/notip.png'
@@ -12,30 +11,14 @@ import koperasi from '../assets/koperasi.png'
 import cv from '../assets/cv.png'
 import close from '../assets/close.png'
 
-
+import ImageCarousel from '../ImageCarousel'
 
 
 class home extends Component {
     constructor(i){
         super(i)
         this.state= {
-            slideItem :[
-                {
-                    title:'item 1'
-                },
-                {
-                    title:'item 2'
-                },
-                {
-                    title:'item 3'
-                },
-                {
-                    title:'item 4'
-                },
-                {
-                    title:'item 5'
-                }
-            ]
+            
         }
     }
     render() {
@@ -80,13 +63,10 @@ class home extends Component {
                             Berita Terbaru
                         </Text>
                     </View>
-                    <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-                        <View style={{flexDirection:'row',marginTop:10,padding:10,alignItems:'center'}}>
-                            <View style={{height:130,width:290,borderRadius:10,backgroundColor:'#D9D9D9',marginHorizontal:5}}/>
-                            <View style={{height:160,width:290,borderRadius:10,backgroundColor:'#EBEBEB',marginHorizontal:5}}/>
-                            <View style={{height:130,width:290,borderRadius:10,backgroundColor:'#D9D9D9',marginHorizontal:5}}/>
+                    
+                        <View style={{marginTop:10}}>
+                            <ImageCarousel/>
                         </View>
-                    </ScrollView>
                     <View style={{alignItems:'center',marginTop:15}}>
                         <Text style={{fontFamily:'nunito.bold',fontSize:16,color:'#171717'}}>
                             Label Terbaru
