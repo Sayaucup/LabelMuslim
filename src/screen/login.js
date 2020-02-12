@@ -8,6 +8,7 @@ import {
     ImageBackground,
     TextInput,
     TouchableOpacity,
+    TouchableWithoutFeedback,
     Modal,
     StatusBar
 } from 'react-native'
@@ -104,16 +105,16 @@ class login extends Component {
                                 </TouchableOpacity>
                             </View>
                         </View>
-                        <TouchableOpacity onPress={() => this.props.navigation.navigate('Home')}>
+                        <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('Home')}>
                             <View style={styles.viewLogin}>
                                 <Text style={styles.textLoading}>Login</Text>
                             </View>
-                        </TouchableOpacity>
-                        <TouchableOpacity onPress={() => this.props.navigation.navigate('Register')}>
+                        </TouchableWithoutFeedback>
+                        <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('Register')}>
                             <View style={styles.viewDaftar}>
                                 <Text style={styles.textLoading}>Daftar</Text>
                             </View>
-                        </TouchableOpacity>
+                        </TouchableWithoutFeedback>
                     </ImageBackground>
                 </ScrollView>
 

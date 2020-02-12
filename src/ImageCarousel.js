@@ -42,20 +42,15 @@ export default class ImageCarousel extends Component {
     renderItem = ({item, index}) => {
         const {uri, title, content} = item;
         return (
-            <TouchableOpacity
-                activeOpacity={1}
+            <View style={{marginHorizontal:5}}>
+                <View
                 style={styles.item}
-                onPress={() => {
-                    this
-                        .numberCarousel
-                        .scrollToIndex(index);
-                }}>
+                >
                 <ImageBackground
                     source={{
                         uri: uri
                     }}
-                    style={styles.imageBackground}
-                    loadingIndicatorSource={loadingBlurImage}>
+                    style={styles.imageBackground}>
                     <View style={styles.rightTextContainer}>
                         <Text style={styles.rightText}>Riyadi</Text>
                     </View>
@@ -64,7 +59,8 @@ export default class ImageCarousel extends Component {
                     <Text style={styles.titleText}>{title}</Text>
                     <Text style={styles.contentText}>{content}</Text>
                 </View> */}
-            </TouchableOpacity>
+            </View>
+            </View>
         );
     };
 
@@ -92,10 +88,9 @@ const styles = StyleSheet.create({
         borderWidth: 2,
         backgroundColor: 'white',
         flex: 1,
-        height:200,
+        height:160,
         borderRadius: 5,
-        borderColor: 'white',
-        elevation: 3
+        borderColor: 'white'
     },
     imageBackground: {
         flex: 2,
@@ -106,15 +101,17 @@ const styles = StyleSheet.create({
     },
     rightTextContainer: {
         marginLeft: 'auto',
-        marginRight: -2,
+        marginRight: -10,
         backgroundColor: 'rgba(49, 49, 51,0.5)',
-        padding: 3,
+        padding: 5,
         marginTop: 3,
         borderTopLeftRadius: 5,
         borderBottomLeftRadius: 5
     },
     rightText: {
-        color: 'white'
+        color: 'white',
+        fontSize:15,
+        fontFamily:'nunito.semibold'
     },
     lowerContainer: {
         flex: 1,

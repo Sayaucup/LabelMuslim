@@ -44,7 +44,7 @@ class home extends Component {
                                 <View style={{marginLeft:10,height:65,width: 60,borderRadius:10,borderWidth:2,borderColor:'#E8E8E8',justifyContent:'center',alignItems:'center'}}>
                                     <Image style={{height:40,width:36,borderRadius:8}} source={plus}/>
                                 </View>
-                                <View style={{marginLeft:10}}>
+                                <View style={{marginLeft:10,maxWidth:300}}>
                                     <Text style={{fontFamily:'nunito.bold',fontSize:20,color:'#EE2020'}}>
                                         12 Januari 2020
                                     </Text>
@@ -63,22 +63,21 @@ class home extends Component {
                             Berita Terbaru
                         </Text>
                     </View>
-                    
-                        <View style={{marginTop:10}}>
-                            <ImageCarousel/>
-                        </View>
+                    <View style={{marginTop:10}}>
+                        <ImageCarousel/>
+                    </View>
                     <View style={{alignItems:'center',marginTop:15}}>
                         <Text style={{fontFamily:'nunito.bold',fontSize:16,color:'#171717'}}>
                             Label Terbaru
                         </Text>
                     </View>
-                    <View style={{height:90,width:'90%',backgroundColor:'#fff',marginTop:10,borderRadius:15,alignSelf:'center',justifyContent:'center',elevation:5}}>
-                        <View style={{flexDirection:'row',justifyContent:'space-between'}}>
-                            <View style={{height:90,width:50,justifyContent:'center'}}>
-                                <Image style={{marginLeft:25,height:'51%',width:'55%',maxHeight:'80%',maxWidth:'60%'}} source={pt}/>
+                    <View style={{padding:10,height:90,width:'90%',backgroundColor:'#fff',marginTop:10,borderRadius:15,alignSelf:'center',justifyContent:'center',elevation:5}}>
+                        <View style={{flexDirection:'row'}}>
+                            <View style={{height:90,width:75,alignItems:'center',justifyContent:'center',padding:5}}>
+                                <Image style={{height:'55%',width:'42%',maxHeight:'100%',maxWidth:'100%'}} source={pt}/>
                             </View>
-                            <View style={{marginLeft:5,justifyContent:'center'}}>
-                                <Text style={{fontSize:13,fontFamily:'nunito.bold',color:'#000000',maxWidth:215}}>
+                            <View style={{marginLeft:5,justifyContent:'center',position:'relative'}}>
+                                <Text style={{fontSize:12,fontFamily:'nunito.bold',color:'#000000',maxWidth:210}}>
                                     PT. GARUDA BANGSA INDONESIA
                                 </Text>
                                 <Text style={{fontSize:9,fontFamily:'nunito.semibold',color:'#000000'}}>
@@ -88,17 +87,17 @@ class home extends Component {
                                     12 Januari 2019
                                 </Text>
                             </View>
-                            <Image style={{height:10,width:10,top:8,right:10}} source={close}/>
+                            <Image style={{height:10,width:10,top:8,marginLeft:'auto'}} source={close}/>
                         </View>
                     </View>
-                    <View style={{height:90,width:'90%',backgroundColor:'#fff',marginTop:10,borderRadius:15,alignSelf:'center',justifyContent:'center',elevation:5}}>
-                        <View style={{flexDirection:'row',justifyContent:'space-between'}}>
-                            <View style={{height:90,width:50,justifyContent:'center'}}>
-                                <Image style={{marginLeft:25,height:'51%',width:'55%',maxHeight:'80%',maxWidth:'60%'}} source={pt}/>
+                    <View style={{padding:10,height:90,width:'90%',backgroundColor:'#fff',marginTop:10,borderRadius:15,alignSelf:'center',justifyContent:'center',elevation:5}}>
+                        <View style={{flexDirection:'row'}}>
+                            <View style={{height:90,width:75,alignItems:'center',justifyContent:'center',padding:5}}>
+                                <Image style={{height:'60%',width:'100%',maxHeight:'100%',maxWidth:'100%'}} source={koperasi}/>
                             </View>
-                            <View style={{marginLeft:5,justifyContent:'center'}}>
-                                <Text style={{fontSize:13,fontFamily:'nunito.bold',color:'#000000',maxWidth:215}}>
-                                    PT. GARUDA BANGSA INDONESIA
+                            <View style={{marginLeft:5,justifyContent:'center',position:'relative'}}>
+                                <Text style={{fontSize:12,fontFamily:'nunito.bold',color:'#000000',maxWidth:210}}>
+                                    KOPERASI SIMPAN PINJAM AL HUSNA
                                 </Text>
                                 <Text style={{fontSize:9,fontFamily:'nunito.semibold',color:'#000000'}}>
                                     TOKO ONLINE
@@ -107,17 +106,17 @@ class home extends Component {
                                     12 Januari 2019
                                 </Text>
                             </View>
-                            <Image style={{height:10,width:10,top:8,right:10}} source={close}/>
+                            <Image style={{height:10,width:10,top:8,marginLeft:'auto'}} source={close}/>
                         </View>
                     </View>
-                    <View style={{height:90,width:'90%',backgroundColor:'#fff',marginTop:10,borderRadius:15,alignSelf:'center',justifyContent:'center',elevation:5}}>
-                        <View style={{flexDirection:'row',justifyContent:'space-between'}}>
-                            <View style={{height:90,width:50,justifyContent:'center'}}>
-                                <Image style={{marginLeft:25,height:'51%',width:'55%',maxHeight:'80%',maxWidth:'60%'}} source={pt}/>
+                    <View style={{padding:10,height:90,width:'90%',backgroundColor:'#fff',marginTop:10,borderRadius:15,alignSelf:'center',justifyContent:'center',elevation:5}}>
+                        <View style={{flexDirection:'row'}}>
+                            <View style={{height:90,width:75,alignItems:'center',justifyContent:'center',padding:5}}>
+                                <Image style={{height:'50%',width:'62%',maxHeight:'100%',maxWidth:'100%'}} source={cv}/>
                             </View>
-                            <View style={{marginLeft:5,justifyContent:'center'}}>
-                                <Text style={{fontSize:13,fontFamily:'nunito.bold',color:'#000000',maxWidth:215}}>
-                                    PT. GARUDA BANGSA INDONESIA
+                            <View style={{marginLeft:5,justifyContent:'center',position:'relative'}}>
+                                <Text style={{fontSize:12,fontFamily:'nunito.bold',color:'#000000',maxWidth:210}}>
+                                    CV. ADITYA PRADESTA
                                 </Text>
                                 <Text style={{fontSize:9,fontFamily:'nunito.semibold',color:'#000000'}}>
                                     TOKO ONLINE
@@ -126,7 +125,7 @@ class home extends Component {
                                     12 Januari 2019
                                 </Text>
                             </View>
-                            <Image style={{height:10,width:10,top:8,right:10}} source={close}/>
+                            <Image style={{height:10,width:10,top:8,marginLeft:'auto'}} source={close}/>
                         </View>
                     </View>
                     <View style={{alignItems:'center',marginTop:20,paddingBottom:100}}>
