@@ -107,7 +107,7 @@ class login extends Component {
                         </View>
                         <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('Home')}>
                             <View style={styles.viewLogin}>
-                                <Text style={styles.textLoading}>Login</Text>
+                                <Text style={styles.textLogin}>Login</Text>
                             </View>
                         </TouchableWithoutFeedback>
                         <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('Register')}>

@@ -21,7 +21,7 @@ const styles = StyleSheet.create ({
         alignSelf: 'center',
         width: '75%',
         borderColor: '#fff',
-        borderBottomWidth: 2
+        borderBottomWidth: 2.5
     },
     viewTextInput2 : {
         marginTop:10,
@@ -29,7 +29,7 @@ const styles = StyleSheet.create ({
         alignSelf: 'center',
         width: '75%',
         borderColor: '#fff',
-        borderBottomWidth: 2
+        borderBottomWidth: 2.5
     },
     textInput : {
         marginTop:5,
@@ -62,8 +62,8 @@ const styles = StyleSheet.create ({
     },
     viewDaftar : {
         marginTop:30,
-        paddingVertical: 15,
-        width: '50%',
+        paddingVertical: 13,
+        width: '75%',
         backgroundColor: '#5C97F7',
         alignSelf: 'center',
         alignItems: 'center',
@@ -74,6 +74,11 @@ const styles = StyleSheet.create ({
         alignSelf: 'center',
         marginTop: 35,
         paddingBottom: 29
+    },
+    textDaftar : {
+        fontSize:25,
+        color:'#fff',
+        fontFamily: 'nunito.semibold',
     }
 })
 

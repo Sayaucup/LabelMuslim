@@ -5,9 +5,11 @@ import {
     TouchableOpacity,
     View,
     Dimensions,
-    ImageBackground
+    ImageBackground,
+    Image
 } from 'react-native';
-import Carousel from 'react-native-anchor-carousel';
+import Carousel from 'react-native-anchor-carousel'
+import Logo from './assets/Logo.png'
 import loadingBlurImage from './loading-blur.png';
 
 const {width} = Dimensions.get('window');
@@ -19,22 +21,30 @@ const data = [
         content: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, a' +
                 'dipisci velit...'
     }, {
-        uri: 'https://i.imgur.com/Pz2WYAc.jpg',
+        uri: 'https://i.imgur.com/GImvG4q.jpg',
         title: 'Lorem ipsum ',
         content: 'Neque porro quisquam est qui dolorem ipsum '
     }, {
-        uri: 'https://i.imgur.com/IGRuEAa.jpg',
+        uri: 'https://i.imgur.com/GImvG4q.jpg',
         title: 'Lorem ipsum dolor',
         content: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, a' +
                 'dipisci velit...'
     }, {
-        uri: 'https://i.imgur.com/fRGHItn.jpg',
+        uri: 'https://i.imgur.com/GImvG4q.jpg',
         title: 'Lorem ipsum dolor',
         content: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet'
     }, {
-        uri: 'https://i.imgur.com/WmenvXr.jpg',
-        title: 'Lorem ipsum ',
-        content: 'Neque porro quisquam est qui dolorem ipsum quia dolor '
+        uri: 'https://i.imgur.com/GImvG4q.jpg',
+        title: 'Lorem ipsum dolor',
+        content: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet'
+    }, {
+        uri: 'https://i.imgur.com/GImvG4q.jpg',
+        title: 'Lorem ipsum dolor',
+        content: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet'
+    }, {
+        uri: 'https://i.imgur.com/GImvG4q.jpg',
+        title: 'Lorem ipsum dolor',
+        content: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet'
     }
 ];
 
@@ -42,24 +52,33 @@ export default class ImageCarousel extends Component {
     renderItem = ({item, index}) => {
         const {uri, title, content} = item;
         return (
-            <View style={{marginHorizontal:5}}>
-                <View
-                style={styles.item}
-                >
-                <ImageBackground
-                    source={{
-                        uri: uri
-                    }}
-                    style={styles.imageBackground}>
-                    <View style={styles.rightTextContainer}>
+            <View style={{
+                    marginHorizontal: 5
+                }}>
+                <TouchableOpacity
+                    activeOpacity={1}
+                    style={styles.item}
+                    onPress={() => {
+                        this
+                            .numberCarousel
+                            .scrollToIndex(index);
+                    }}>
+                    <Image
+                        source={{
+                            uri: uri
+                        }}
+                        style={styles.imageBackground}/> 
+                        {/* <View style={styles.rightTextContainer}>
                         <Text style={styles.rightText}>Riyadi</Text>
-                    </View>
-                </ImageBackground>
-                {/* <View style={styles.lowerContainer}>
+                    </View> */
+                    }
+
+                    {/* <View style={styles.lowerContainer}>
                     <Text style={styles.titleText}>{title}</Text>
                     <Text style={styles.contentText}>{content}</Text>
-                </View> */}
-            </View>
+                </View> */
+                    }
+                </TouchableOpacity>
             </View>
         );
     };
@@ -82,22 +101,21 @@ export default class ImageCarousel extends Component {
 
 const styles = StyleSheet.create({
     carousel: {
-        flex: 1,
+        flex: 1
     },
     item: {
-        borderWidth: 2,
-        backgroundColor: 'white',
+        // borderWidth: 2, backgroundColor: 'white',
         flex: 1,
-        height:160,
-        borderRadius: 5,
-        borderColor: 'white'
+        height: 160,
+        // borderRadius: 5, borderColor: 'white'
     },
     imageBackground: {
         flex: 2,
-        backgroundColor: '#EBEBEB',
-        borderWidth: 5,
-        height:'100%',
-        borderColor: 'white'
+        backgroundColor: '#D9D9D9',
+        // borderWidth: 5,
+        borderRadius: 20,
+        height: '100%',
+        // borderColor: 'white'
     },
     rightTextContainer: {
         marginLeft: 'auto',
@@ -110,8 +128,8 @@ const styles = StyleSheet.create({
     },
     rightText: {
         color: 'white',
-        fontSize:15,
-        fontFamily:'nunito.semibold'
+        fontSize: 15,
+        fontFamily: 'nunito.semibold'
     },
     lowerContainer: {
         flex: 1,

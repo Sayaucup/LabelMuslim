@@ -179,7 +179,7 @@ class register extends Component {
                     </ImageBackground>
                     <TouchableWithoutFeedback onPress={this.back}>
                         <View style={styles.viewDaftar}>
-                            <Text style={styles.textLoading}>Daftar Sekarang</Text>
+                            <Text style={styles.textDaftar}>Daftar Sekarang</Text>
                         </View>
                     </TouchableWithoutFeedback>
                     <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('Login')}>
