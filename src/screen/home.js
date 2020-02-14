@@ -22,10 +22,6 @@ import close from '../assets/close.png'
 import ImageCarousel from '../ImageCarousel'
 
 class home extends Component {
-    constructor(i) {
-        super(i)
-        this.state = {}
-    }
     render() {
         return (
             <View style={{
