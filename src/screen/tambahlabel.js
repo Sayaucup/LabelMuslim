@@ -21,9 +21,7 @@ class tambahlabel extends Component {
         }
     };
 
-    onNextStep = () => {
-        console.log('called next step');
-    };
+    
     toast = () => {
         ToastAndroid.showWithGravity(
             'Success',
@@ -31,15 +29,6 @@ class tambahlabel extends Component {
             ToastAndroid.CENTER,
         )
         this.props.navigation.navigate('Home')
-    };
-
-    onPrevStep = () => {
-        console.log('called previous step');
-    };
-
-    onSubmitSteps = () => {
-        alert('called on submit step.')
-        
     };
 
     render() {
@@ -54,17 +43,17 @@ class tambahlabel extends Component {
             completedStepIconColor: '#fff',
             completedProgressBarColor: '#4A86E8',
             completedCheckColor: '#4A86E8',
-            progressBarColor: '#B9B9B9',borderStyle:'dashed'
+            progressBarColor: '#B9B9B9'
         };
 
         const buttonTextStyle = {
+            fontSize:20,
             color: '#fff',
-            fontWeight: 'bold'
         };
         const buttonTextStyle2 = {
             backgroundColor: '#4A86E8',
-            borderRadius:10,
-            paddingHorizontal:30,
+            borderRadius:8,
+            paddingHorizontal:70,
             paddingVertical:10
 
         };
@@ -435,7 +424,7 @@ class tambahlabel extends Component {
                             </View>
                         </ProgressStep>
                         <ProgressStep
-                            // label="Third"
+                            label="Third"
                             scrollViewProps={this.defaultScrollViewProps}
                             nextBtnTextStyle={buttonTextStyle}
                             nextBtnStyle={buttonTextStyle2}
@@ -449,7 +438,7 @@ class tambahlabel extends Component {
                             </View>
                         </ProgressStep>
                         <ProgressStep
-                            // label="Fourth"
+                            label="Fourth"
                             scrollViewProps={this.defaultScrollViewProps}
                             nextBtnTextStyle={buttonTextStyle}
                             nextBtnStyle={buttonTextStyle2}
@@ -463,7 +452,7 @@ class tambahlabel extends Component {
                             </View>
                         </ProgressStep>
                         <ProgressStep
-                            // label="label"
+                            label="five"
                             onSubmit={this.toast}
                             scrollViewProps={this.defaultScrollViewProps}
                             nextBtnTextStyle={buttonTextStyle}
