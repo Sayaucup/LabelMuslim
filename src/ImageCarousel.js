@@ -9,9 +9,6 @@ import {
     Image
 } from 'react-native';
 import Carousel from 'react-native-anchor-carousel'
-import Logo from './assets/Logo.png'
-import loadingBlurImage from './loading-blur.png';
-
 const {width} = Dimensions.get('window');
 
 const data = [

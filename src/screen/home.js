@@ -6,7 +6,8 @@ import {
     Image,
     ScrollView,
     TouchableOpacity,
-    StatusBar
+    StatusBar,
+    FlatList
 } from 'react-native';
 
 import bg from '../assets/bgHome.png'
@@ -20,12 +21,129 @@ import cv from '../assets/cv.png'
 import close from '../assets/close.png'
 
 import ImageCarousel from '../ImageCarousel'
+import Login from './login'
+
+console.disableYellowBox = true;
+
+const data = [
+    {
+        img: pt,
+        name: 'PT. GARUDA BANGSA INDONESIA',
+        desc: 'TOKO ONLINE',
+        close: close,
+        date: '12 Januari 2019'
+    }, {
+        img: pt,
+        name: 'PT. GARUDA BANGSA INDONESIA',
+        desc: 'TOKO ONLINE',
+        close: close,
+        date: '12 Januari 2019'
+    }, {
+        img: pt,
+        name: 'PT. GARUDA BANGSA INDONESIA',
+        desc: 'TOKO ONLINE',
+        close: close,
+        date: '12 Januari 2019'
+    }
+
+]
 
 class home extends Component {
+
+    label = ({item}) => {
+        const {img, name, desc, close, date} = item;
+        return (
+            <TouchableOpacity onPress={() => this.props.navigation.navigate('Detail')}>
+                <View
+                    style={{
+                        padding: 10,
+                        height: 90,
+                        width: '90%',
+                        backgroundColor: '#fff',
+                        marginTop: 10,
+                        borderRadius: 15,
+                        alignSelf: 'center',
+                        justifyContent: 'center',
+                        elevation: 5
+                    }}>
+                    <View
+                        style={{
+                            flexDirection: 'row'
+                        }}>
+                        <View
+                            style={{
+                                height: 90,
+                                width: 75,
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                padding: 5
+                            }}>
+                            <Image
+                                style={{
+                                    height: '55%',
+                                    width: '42%',
+                                    maxHeight: '100%',
+                                    maxWidth: '100%'
+                                }}
+                                source={img}/>
+                        </View>
+                        <View
+                            style={{
+                                marginLeft: 5,
+                                justifyContent: 'center',
+                                position: 'relative'
+                            }}>
+                            <Text
+                                style={{
+                                    fontSize: 12,
+                                    fontFamily: 'nunito.bold',
+                                    color: '#000000',
+                                    maxWidth: 210
+                                }}>
+                                {name}
+                            </Text>
+                            <Text
+                                style={{
+                                    fontSize: 9,
+                                    fontFamily: 'nunito.semibold',
+                                    color: '#000000'
+                                }}>
+                                {desc}
+                            </Text>
+                            <Text
+                                style={{
+                                    top: 8,
+                                    fontSize: 10,
+                                    fontStyle: 'italic',
+                                    fontFamily: 'nunito.semibold',
+                                    color: '#000000'
+                                }}>
+                                {date}
+                            </Text>
+                        </View>
+                        <Image
+                            style={{
+                                height: 10,
+                                width: 10,
+                                top: 8,
+                                marginLeft: 'auto'
+                            }}
+                            source={close}/>
+                    </View>
+                </View>
+                <View style={{
+                        height: 8
+                    }}/>
+            </TouchableOpacity>
+        )
+    }
+
     render() {
         return (
-            <View style={{
-                    flex: 1
+            <View
+                style={{
+                    flex: 1,
+                    backgroundColor: '#fff'
                 }}>
                 <StatusBar backgroundColor='#548BE3'/>
                 <ScrollView showsVerticalScrollIndicator={false}>
@@ -44,7 +162,7 @@ class home extends Component {
                             }}>
                             <Text
                                 style={{
-                                    fontFamily: 'nunito.bold',
+                                    fontFamily: 'nunito.black',
                                     fontSize: 30,
                                     color: '#fff'
                                 }}>
@@ -82,25 +200,27 @@ class home extends Component {
                                 style={{
                                     flexDirection: 'row'
                                 }}>
-                                <View
-                                    style={{
-                                        marginLeft: 15,
-                                        height: 60,
-                                        width: 60,
-                                        borderRadius: 7,
-                                        borderWidth: 2,
-                                        borderColor: '#E8E8E8',
-                                        justifyContent: 'center',
-                                        alignItems: 'center'
-                                    }}>
-                                    <Image
+                                <TouchableOpacity onPress={() => this.props.navigation.navigate('Daftar')}>
+                                    <View
                                         style={{
-                                            height: 35,
-                                            width: 28,
-                                            borderRadius: 5
-                                        }}
-                                        source={schedule}/>
-                                </View>
+                                            marginLeft: 15,
+                                            height: 60,
+                                            width: 60,
+                                            borderRadius: 7,
+                                            borderWidth: 2,
+                                            borderColor: '#E8E8E8',
+                                            justifyContent: 'center',
+                                            alignItems: 'center'
+                                        }}>
+                                        <Image
+                                            style={{
+                                                height: 35,
+                                                width: 32,
+                                                borderRadius: 5
+                                            }}
+                                            source={schedule}/>
+                                    </View>
+                                </TouchableOpacity>
                                 <TouchableOpacity onPress={() => this.props.navigation.navigate('Tambah')}>
                                     <View
                                         style={{
@@ -129,7 +249,7 @@ class home extends Component {
                                     }}>
                                     <Text
                                         style={{
-                                            fontFamily: 'nunito.bold',
+                                            fontFamily: 'nunito.black',
                                             fontSize: 18,
                                             color: '#EE2020'
                                         }}>
@@ -148,7 +268,7 @@ class home extends Component {
                                             source={pin}/>
                                         <Text
                                             style={{
-                                                fontFamily: 'nunito.bold',
+                                                fontFamily: 'nunito.black',
                                                 fontSize: 13,
                                                 marginLeft: 8,
                                                 color: '#171717'
@@ -194,236 +314,14 @@ class home extends Component {
                             Label Terbaru
                         </Text>
                     </View>
-                    <View
-                        style={{
-                            padding: 10,
-                            height: 90,
-                            width: '90%',
-                            backgroundColor: '#fff',
-                            marginTop: 10,
-                            borderRadius: 15,
-                            alignSelf: 'center',
-                            justifyContent: 'center',
-                            elevation: 5
+                    <View style={{
+                            flex: 1
                         }}>
-                        <View
-                            style={{
-                                flexDirection: 'row'
-                            }}>
-                            <View
-                                style={{
-                                    height: 90,
-                                    width: 75,
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    padding: 5
-                                }}>
-                                <Image
-                                    style={{
-                                        height: '55%',
-                                        width: '42%',
-                                        maxHeight: '100%',
-                                        maxWidth: '100%'
-                                    }}
-                                    source={pt}/>
-                            </View>
-                            <View
-                                style={{
-                                    marginLeft: 5,
-                                    justifyContent: 'center',
-                                    position: 'relative'
-                                }}>
-                                <Text
-                                    style={{
-                                        fontSize: 12,
-                                        fontFamily: 'nunito.bold',
-                                        color: '#000000',
-                                        maxWidth: 210
-                                    }}>
-                                    PT. GARUDA BANGSA INDONESIA
-                                </Text>
-                                <Text
-                                    style={{
-                                        fontSize: 9,
-                                        fontFamily: 'nunito.semibold',
-                                        color: '#000000'
-                                    }}>
-                                    TOKO ONLINE
-                                </Text>
-                                <Text
-                                    style={{
-                                        top: 8,
-                                        fontSize: 10,
-                                        fontStyle: 'italic',
-                                        fontFamily: 'nunito.semibold',
-                                        color: '#000000'
-                                    }}>
-                                    12 Januari 2019
-                                </Text>
-                            </View>
-                            <Image
-                                style={{
-                                    height: 10,
-                                    width: 10,
-                                    top: 8,
-                                    marginLeft: 'auto'
-                                }}
-                                source={close}/>
-                        </View>
-                    </View>
-                    <View
-                        style={{
-                            padding: 10,
-                            height: 90,
-                            width: '90%',
-                            backgroundColor: '#fff',
-                            marginTop: 10,
-                            borderRadius: 15,
-                            alignSelf: 'center',
-                            justifyContent: 'center',
-                            elevation: 5
-                        }}>
-                        <View
-                            style={{
-                                flexDirection: 'row'
-                            }}>
-                            <View
-                                style={{
-                                    height: 90,
-                                    width: 75,
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    padding: 5
-                                }}>
-                                <Image
-                                    style={{
-                                        height: '60%',
-                                        width: '100%',
-                                        maxHeight: '100%',
-                                        maxWidth: '100%'
-                                    }}
-                                    source={koperasi}/>
-                            </View>
-                            <View
-                                style={{
-                                    marginLeft: 5,
-                                    justifyContent: 'center',
-                                    position: 'relative'
-                                }}>
-                                <Text
-                                    style={{
-                                        fontSize: 12,
-                                        fontFamily: 'nunito.bold',
-                                        color: '#000000',
-                                        maxWidth: 210
-                                    }}>
-                                    KOPERASI SIMPAN PINJAM AL HUSNA
-                                </Text>
-                                <Text
-                                    style={{
-                                        fontSize: 9,
-                                        fontFamily: 'nunito.semibold',
-                                        color: '#000000'
-                                    }}>
-                                    TOKO ONLINE
-                                </Text>
-                                <Text
-                                    style={{
-                                        top: 8,
-                                        fontSize: 10,
-                                        fontStyle: 'italic',
-                                        fontFamily: 'nunito.semibold',
-                                        color: '#000000'
-                                    }}>
-                                    12 Januari 2019
-                                </Text>
-                            </View>
-                            <Image
-                                style={{
-                                    height: 10,
-                                    width: 10,
-                                    top: 8,
-                                    marginLeft: 'auto'
-                                }}
-                                source={close}/>
-                        </View>
-                    </View>
-                    <View
-                        style={{
-                            padding: 10,
-                            height: 90,
-                            width: '90%',
-                            backgroundColor: '#fff',
-                            marginTop: 10,
-                            borderRadius: 15,
-                            alignSelf: 'center',
-                            justifyContent: 'center',
-                            elevation: 5
-                        }}>
-                        <View
-                            style={{
-                                flexDirection: 'row'
-                            }}>
-                            <View
-                                style={{
-                                    height: 90,
-                                    width: 75,
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    padding: 5
-                                }}>
-                                <Image
-                                    style={{
-                                        height: '50%',
-                                        width: '62%',
-                                        maxHeight: '100%',
-                                        maxWidth: '100%'
-                                    }}
-                                    source={cv}/>
-                            </View>
-                            <View
-                                style={{
-                                    marginLeft: 5,
-                                    justifyContent: 'center',
-                                    position: 'relative'
-                                }}>
-                                <Text
-                                    style={{
-                                        fontSize: 12,
-                                        fontFamily: 'nunito.bold',
-                                        color: '#000000',
-                                        maxWidth: 210
-                                    }}>
-                                    CV. ADITYA PRADESTA
-                                </Text>
-                                <Text
-                                    style={{
-                                        fontSize: 9,
-                                        fontFamily: 'nunito.semibold',
-                                        color: '#000000'
-                                    }}>
-                                    TOKO ONLINE
-                                </Text>
-                                <Text
-                                    style={{
-                                        top: 8,
-                                        fontSize: 10,
-                                        fontStyle: 'italic',
-                                        fontFamily: 'nunito.semibold',
-                                        color: '#000000'
-                                    }}>
-                                    12 Januari 2019
-                                </Text>
-                            </View>
-                            <Image
-                                style={{
-                                    height: 10,
-                                    width: 10,
-                                    top: 8,
-                                    marginLeft: 'auto'
-                                }}
-                                source={close}/>
-                        </View>
+                        <FlatList
+                            showsVerticalScrollIndicator={false}
+                            data={data}
+                            renderItem={this.label}
+                            keyExtractor={item => item.toString()}/>
                     </View>
                     <View
                         style={{
@@ -431,14 +329,16 @@ class home extends Component {
                             marginTop: 20,
                             paddingBottom: 100
                         }}>
-                        <Text
-                            style={{
-                                fontFamily: 'nunito.bold',
-                                fontSize: 14,
-                                color: '#538AE3'
-                            }}>
-                            Lihat Selengkapnya
-                        </Text>
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate('Daftar')}>
+                            <Text
+                                style={{
+                                    fontFamily: 'nunito.bold',
+                                    fontSize: 14,
+                                    color: '#538AE3'
+                                }}>
+                                Lihat Selengkapnya
+                            </Text>
+                        </TouchableOpacity>
                     </View>
                 </ScrollView>
             </View>

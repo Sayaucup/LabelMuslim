@@ -10,7 +10,6 @@ import {
 
 import {ProgressSteps, ProgressStep} from 'react-native-progress-steps';
 import Icon from 'react-native-vector-icons/SimpleLineIcons'
-import { color } from 'react-native-reanimated';
 
 class tambahlabel extends Component {
 
@@ -20,7 +19,6 @@ class tambahlabel extends Component {
             flex: 1,
         }
     };
-
     
     toast = () => {
         ToastAndroid.showWithGravity(
@@ -30,7 +28,7 @@ class tambahlabel extends Component {
         )
         this.props.navigation.navigate('Home')
     };
-
+    
     render() {
         const progressStepsStyle = {
             activeStepIconBorderColor: '#4A86E8',
