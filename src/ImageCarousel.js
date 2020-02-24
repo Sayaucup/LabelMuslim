@@ -16,33 +16,33 @@ const {width} = Dimensions.get('window');
 
 const data = [
     {
-        uri: 'https://i.imgur.com/GImvG4q.jpg',
+        uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png',
         title: 'Lorem ipsum dolor sit amet',
         content: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, a' +
                 'dipisci velit...'
     }, {
-        uri: 'https://i.imgur.com/GImvG4q.jpg',
+        uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png',
         title: 'Lorem ipsum ',
         content: 'Neque porro quisquam est qui dolorem ipsum '
     }, {
-        uri: 'https://i.imgur.com/GImvG4q.jpg',
+        uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png',
         title: 'Lorem ipsum dolor',
         content: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, a' +
                 'dipisci velit...'
     }, {
-        uri: 'https://i.imgur.com/GImvG4q.jpg',
+        uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png',
         title: 'Lorem ipsum dolor',
         content: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet'
     }, {
-        uri: 'https://i.imgur.com/GImvG4q.jpg',
+        uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png',
         title: 'Lorem ipsum dolor',
         content: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet'
     }, {
-        uri: 'https://i.imgur.com/GImvG4q.jpg',
+        uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png',
         title: 'Lorem ipsum dolor',
         content: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet'
     }, {
-        uri: 'https://i.imgur.com/GImvG4q.jpg',
+        uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png',
         title: 'Lorem ipsum dolor',
         content: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet'
     }
@@ -111,11 +111,11 @@ const styles = StyleSheet.create({
     },
     imageBackground: {
         flex: 2,
-        backgroundColor: '#D9D9D9',
-        // borderWidth: 5,
+        backgroundColor: '#fff',
+        borderWidth: 5,
         borderRadius: 20,
         height: '100%',
-        // borderColor: 'white'
+        borderColor: '#61dbfb'
     },
     rightTextContainer: {
         marginLeft: 'auto',

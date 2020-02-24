@@ -17,41 +17,21 @@ const styles = StyleSheet.create ({
         fontFamily: 'nunito.semibold',
     },
     viewTextInput : {
-        marginTop:10,
         alignSelf: 'center',
         width: '75%',
-        borderColor: '#fff',
-        borderBottomWidth: 2.5
     },
     viewTextInput2 : {
-        marginTop:10,
-        flexDirection:'row',
         alignSelf: 'center',
         width: '75%',
-        borderColor: '#fff',
-        borderBottomWidth: 2.5
-    },
-    textInput : {
-        marginTop:5,
-        paddingRight: 50,
-        paddingLeft: 5,
-        fontFamily: 'nunito.semibold',
-        fontSize: 20,
-        color:'#fff'
-    },
-    textInput2 : {
-        paddingRight: 50,
-        paddingLeft: 5,
-        fontFamily: 'nunito.semibold',
-        fontSize: 20,
-        color:'#fff'
+        // borderColor: '#fff',
+        // borderBottomWidth: 2.5
     },
     positionHide : {
         position: 'absolute',
-        right: 10,
-        top: 5,
-        height: 40,
-        width: 35,
+        right: 0,
+        top: 30,
+        height: 33,
+        width: 33,
         padding: 5
     },
     styleIconHide : {
@@ -61,19 +41,19 @@ const styles = StyleSheet.create ({
         tintColor: '#fff'
     },
     viewDaftar : {
-        marginTop:30,
+        marginTop:100,
         paddingVertical: 13,
         width: '75%',
         backgroundColor: '#5C97F7',
         alignSelf: 'center',
         alignItems: 'center',
-        borderRadius: 10,
+        borderRadius: 10
         
     },
     viewLogin : {
         alignSelf: 'center',
         marginTop: 35,
-        paddingBottom: 29
+        paddingBottom: 39
     },
     textDaftar : {
         fontSize:25,

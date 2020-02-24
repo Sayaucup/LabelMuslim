@@ -16,6 +16,8 @@
     "react-native": "0.61.5",
     "react-native-anchor-carousel": "^3.1.1",
     "react-native-gesture-handler": "^1.5.6",
+    "react-native-material-dropdown": "^0.11.1",
+    "react-native-material-textfield": "^0.16.1",
     "react-native-media-controls": "^1.1.1",
     "react-native-progress-steps": "^1.2.8",
     "react-native-reanimated": "^1.7.0",

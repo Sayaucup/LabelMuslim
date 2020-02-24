@@ -410,7 +410,7 @@ class tambahlabel extends Component {
                         
                         </ProgressStep>
                         <ProgressStep
-                            label="Second"
+                            label="Two"
                             scrollViewProps={this.defaultScrollViewProps}
                             nextBtnTextStyle={buttonTextStyle}
                             nextBtnStyle={buttonTextStyle2}
@@ -424,7 +424,7 @@ class tambahlabel extends Component {
                             </View>
                         </ProgressStep>
                         <ProgressStep
-                            label="Third"
+                            label="Three"
                             scrollViewProps={this.defaultScrollViewProps}
                             nextBtnTextStyle={buttonTextStyle}
                             nextBtnStyle={buttonTextStyle2}
@@ -438,7 +438,7 @@ class tambahlabel extends Component {
                             </View>
                         </ProgressStep>
                         <ProgressStep
-                            label="Fourth"
+                            label="Four"
                             scrollViewProps={this.defaultScrollViewProps}
                             nextBtnTextStyle={buttonTextStyle}
                             nextBtnStyle={buttonTextStyle2}
