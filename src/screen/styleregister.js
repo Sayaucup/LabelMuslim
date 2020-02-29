@@ -14,15 +14,16 @@ const styles = StyleSheet.create ({
     textLoading : {
         fontSize:20,
         color:'#fff',
-        fontFamily: 'nunito.semibold',
+        fontFamily: 'nunito.black',
     },
     viewTextInput : {
         alignSelf: 'center',
-        width: '75%',
+        width: '85%',
     },
     viewTextInput2 : {
         alignSelf: 'center',
-        width: '75%',
+        width: '85%',
+        top:-20
         // borderColor: '#fff',
         // borderBottomWidth: 2.5
     },
@@ -41,7 +42,7 @@ const styles = StyleSheet.create ({
         tintColor: '#fff'
     },
     viewDaftar : {
-        marginTop:100,
+        marginTop:50,
         paddingVertical: 13,
         width: '75%',
         backgroundColor: '#5C97F7',
@@ -58,7 +59,7 @@ const styles = StyleSheet.create ({
     textDaftar : {
         fontSize:25,
         color:'#fff',
-        fontFamily: 'nunito.semibold',
+        fontFamily: 'nunito.black',
     }
 })
 

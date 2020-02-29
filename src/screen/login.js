@@ -83,7 +83,7 @@ class login extends Component {
                         </View>
                         <View
                             style={{
-                                marginTop: 60
+                                marginTop: 55
                             }}>
                             <View style={styles.viewTextInput}>
                                 <TextField
@@ -94,7 +94,7 @@ class login extends Component {
                                     activeLineWidth={0.7}
                                     tintColor='#fff'
                                     baseColor='#fff'
-                                    fontSize={20}
+                                    fontSize={18}
                                 />
                             </View>
                             <View style={styles.viewTextInput2}>
@@ -106,7 +106,7 @@ class login extends Component {
                                     activeLineWidth={0.7}
                                     tintColor='#fff'
                                     baseColor='#fff'
-                                    fontSize={20}
+                                    fontSize={18}
                                     secureTextEntry={this.state.hidePassword}
                                 />
                                 <TouchableOpacity

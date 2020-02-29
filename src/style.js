@@ -19,16 +19,17 @@ const styles = StyleSheet.create ({
     textLoading : {
         fontSize:20,
         color:'#fff',
-        fontFamily: 'nunito.semibold',
+        fontFamily: 'nunito.black',
         fontWeight:'900'
     },
     viewTextInput : {
         alignSelf: 'center',
-        width: '75%',
+        width: '85%',
     },
     viewTextInput2 : {
         alignSelf: 'center',
-        width: '75%',
+        width: '85%',
+        top:-20
         // borderColor: '#fff',
         // borderBottomWidth: 2.5
     },
@@ -63,7 +64,7 @@ const styles = StyleSheet.create ({
     textLogin : {
         fontSize:25,
         color:'#fff',
-        fontFamily: 'nunito.semibold',
+        fontFamily: 'nunito.black',
     }
 })
 
