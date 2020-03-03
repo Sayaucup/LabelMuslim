@@ -354,7 +354,7 @@ class register extends Component {
             .navigation
             .navigate('Login')
     }
-    register = () => {
+    Register = () => {
         const {
             nama_lengkap,
             kota,
@@ -568,7 +568,7 @@ class register extends Component {
                         </View>
                     </ImageBackground>
                     
-                    <TouchableWithoutFeedback onPress={this.register}>
+                    <TouchableWithoutFeedback onPress={this.Register}>
                         <View style={styles.viewDaftar}>
                             <Text style={styles.textDaftar}>Daftar Sekarang</Text>
                         </View>

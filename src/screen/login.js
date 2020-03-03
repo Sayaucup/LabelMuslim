@@ -10,7 +10,8 @@ import {
     TouchableOpacity,
     TouchableWithoutFeedback,
     Modal,
-    StatusBar
+    StatusBar,
+    AsyncStorage
 } from 'react-native'
 import {
     TextField
@@ -26,13 +27,64 @@ class login extends Component {
         this.state = {
             hidePassword: true,
             role: true,
-            loading: true
+            loading: true,
+            username:'',
+            password:'',
+            nama_lengkap:'',
+            kota:'',
+            jenis_kelamin:'',
+            id_user:''
         };
     }
     managePasswordVisibility = () => {
         this.setState({
             hidePassword: !this.state.hidePassword
         });
+    };
+    componentDidMount() {
+        AsyncStorage
+            .getItem('api_key')
+            .then(value => {
+                if (value != null) {
+                    this
+                        .props
+                        .navigation
+                        .navigate('Home');
+                }
+            });
+    }
+    Login = () => {
+        const {username, password} = this.state;
+        fetch('http://labelmuslim.sipondok.com/api/login', {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({username: username, password: password})
+        })
+            .then(resJson => resJson.json())
+            .then(resJson => {
+                console.log(resJson);
+                if (resJson.api_key) {
+                    AsyncStorage.setItem('id_user', resJson.data.id_user);
+                    AsyncStorage.setItem('nama_lengkap', resJson.data.nama_lengkap);
+                    AsyncStorage.setItem('kota', resJson.data.kota);
+                    AsyncStorage.setItem('jenis_kelamin', resJson.data.jenis_kelamin);
+                    AsyncStorage.setItem('api_key', resJson.api_key);
+                    
+                    this
+                        .props
+                        .navigation
+                        .navigate('Home');
+                        alert('berhasil')
+                } else if (resJson.data.password) {
+                    alert('must be filled');
+                }
+            })
+            .catch(error => {
+                console.log(error);
+            });
     };
     render() {
         setTimeout(() => {
@@ -87,6 +139,8 @@ class login extends Component {
                             }}>
                             <View style={styles.viewTextInput}>
                                 <TextField
+                                    onChangeText={text => this.setState({username: text})}
+                                    value={this.state.username}
                                     textColor='#fff'
                                     containerStyle={{maxWidth:500}}
                                     label='Username'
@@ -99,6 +153,8 @@ class login extends Component {
                             </View>
                             <View style={styles.viewTextInput2}>
                                 <TextField
+                                    onChangeText={text => this.setState({password: text})}
+                                    value={this.state.password}
                                     textColor='#fff'
                                     containerStyle={{maxWidth:500}}
                                     label='Password'
@@ -122,7 +178,7 @@ class login extends Component {
                             </View>
                         </View>
                         <TouchableWithoutFeedback
-                            onPress={() => this.props.navigation.navigate('Home')}>
+                            onPress={this.Login}>
                             <View style={styles.viewLogin}>
                                 <Text style={styles.textLogin}>Login</Text>
                             </View>

@@ -7,8 +7,10 @@ import {
     ScrollView,
     TouchableOpacity,
     StatusBar,
-    FlatList
+    FlatList,
+    AsyncStorage
 } from 'react-native';
+import moment from 'moment'
 
 import bg from '../assets/bgHome.png'
 import notip from '../assets/notip.png'
@@ -49,6 +51,16 @@ const data = [
 ]
 
 class home extends Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            nama_lengkap:'',
+            id_user:'',
+            jenis_kelamin:'',
+            selamat:moment().format('HH:mm'),
+            kota:''
+        }
+    }
 
     label = ({item}) => {
         const {img, name, desc, close, date} = item;
@@ -137,6 +149,70 @@ class home extends Component {
             </TouchableOpacity>
         )
     }
+    componentDidMount() {
+        AsyncStorage
+            .getItem('nama_lengkap')
+            .then(value => {
+                if (value != null) {
+                    this.setState({nama_lengkap: value});
+                }
+            });
+            AsyncStorage
+            .getItem('id_user')
+            .then(value => {
+                if (value != null) {
+                    this.setState({id_user: value});
+                }
+            });
+            AsyncStorage
+            .getItem('jenis_kelamin')
+            .then(value => {
+                if (value != null) {
+                    this.setState({jenis_kelamin: value});
+                }
+            });
+            AsyncStorage
+            .getItem('kota')
+            .then(value => {
+                if (value != null) {
+                    this.setState({kota: value});
+                }
+            });
+
+        
+    }
+    jenis_kelamin = ()=>{
+        const {jenis_kelamin} = this.state
+        if (jenis_kelamin=== 'Laki - Laki'){
+            return(
+                <Text>Bpk</Text>
+            )
+        } else if (jenis_kelamin=== 'Perempuan'){
+            return(
+                <Text>Ibu</Text>
+            )
+        }
+    }
+    selamat = () => {
+        const {selamat} = this.state
+        if (selamat >='05:00' && selamat <='11:00'){
+            return(
+                <Text>Pagi</Text>
+            )
+        }else if(selamat >='11:00' && selamat <='15:00'){
+            return(
+                <Text>Siang</Text>
+            )
+        }else if (selamat >='15:00' && selamat <='18:00'){
+            return(
+                <Text>Sore</Text>
+            )
+        }else if (selamat >='18:00' && selamat <='05:00'){
+            return(
+                <Text>Malam</Text>
+            )
+        }
+    }
 
     render() {
         return (
@@ -166,7 +242,7 @@ class home extends Component {
                                     fontSize: 30,
                                     color: '#fff'
                                 }}>
-                                Selamat Pagi,
+                                Selamat {this.selamat()},
                             </Text>
                             <Image
                                 style={{
@@ -183,7 +259,7 @@ class home extends Component {
                                 fontFamily: 'nunito.semibold',
                                 color: '#fff'
                             }}>
-                            Bpk. Riyadi
+                            {this.jenis_kelamin()} {this.state.nama_lengkap}
                         </Text>
                         <View
                             style={{
@@ -253,7 +329,7 @@ class home extends Component {
                                             fontSize: 18,
                                             color: '#EE2020'
                                         }}>
-                                        12 Januari 2020
+                                        {moment().format('D MMMM YYYY')}
                                     </Text>
                                     <View
                                         style={{
@@ -269,11 +345,12 @@ class home extends Component {
                                         <Text
                                             style={{
                                                 fontFamily: 'nunito.black',
-                                                fontSize: 13,
+                                                fontSize: 18,
+                                                textAlign:'center',
                                                 marginLeft: 8,
                                                 color: '#171717'
                                             }}>
-                                            D.I. YOGYAKARTA
+                                            {this.state.kota}
                                         </Text>
                                     </View>
                                 </View>
