@@ -11,7 +11,8 @@ import {
     TouchableWithoutFeedback,
     Modal,
     StatusBar,
-    AsyncStorage
+    AsyncStorage,
+    ToastAndroid
 } from 'react-native'
 import {
     TextField
@@ -20,6 +21,7 @@ import {
 import Logo from '../assets/Logo.png'
 import background from '../assets/background.jpeg'
 import styles from '../style'
+import { Value } from 'react-native-reanimated';
 
 class login extends Component {
     constructor(props) {
@@ -53,6 +55,20 @@ class login extends Component {
                 }
             });
     }
+    toast = () => {
+        ToastAndroid.showWithGravity(
+            'Tunggu',
+            ToastAndroid.SHORT,
+            ToastAndroid.CENTER,
+        );
+    };
+    lanjut = () => {
+        this.toast()
+        this
+            .props
+            .navigation
+            .navigate('Home')
+    }
     Login = () => {
         const {username, password} = this.state;
         fetch('http://labelmuslim.sipondok.com/api/login', {
@@ -73,11 +89,7 @@ class login extends Component {
                     AsyncStorage.setItem('jenis_kelamin', resJson.data.jenis_kelamin);
                     AsyncStorage.setItem('api_key', resJson.api_key);
                     
-                    this
-                        .props
-                        .navigation
-                        .navigate('Home');
-                        alert('berhasil')
+                    this.lanjut()
                 } else if (resJson.data.password) {
                     alert('must be filled');
                 }

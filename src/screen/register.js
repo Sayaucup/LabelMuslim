@@ -342,8 +342,8 @@ class register extends Component {
     };
     toast = () => {
         ToastAndroid.showWithGravity(
-            'Success Register',
-            ToastAndroid.SHORT,
+            'Register berhasil, Silahkan Login',
+            ToastAndroid.LONG,
             ToastAndroid.CENTER,
         );
     };
@@ -378,8 +378,8 @@ class register extends Component {
         })
             .then(response => response.json())
             .then(response => {
-                console.log(response);
-                if (response.api_key) {
+                if (response == 'Berhasil') {
+                    console.log(response);
                     this.back()
                 }
             })

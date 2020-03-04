@@ -8,7 +8,8 @@ import {
     TouchableOpacity,
     StatusBar,
     FlatList,
-    AsyncStorage
+    AsyncStorage,
+    ToastAndroid
 } from 'react-native';
 import moment from 'moment'
 
@@ -61,7 +62,21 @@ class home extends Component {
             kota:''
         }
     }
-
+    toast = () => {
+        ToastAndroid.showWithGravity(
+            'Tunggu',
+            ToastAndroid.SHORT,
+            ToastAndroid.CENTER,
+        );
+    };
+    logout = () => {
+        this.toast()
+        AsyncStorage.removeItem('api_key')
+        this
+            .props
+            .navigation
+            .navigate('AuthStack')
+    };
     label = ({item}) => {
         const {img, name, desc, close, date} = item;
         return (
@@ -244,13 +259,15 @@ class home extends Component {
                                 }}>
                                 Selamat {this.selamat()},
                             </Text>
-                            <Image
-                                style={{
-                                    height: 40,
-                                    width: 35,
-                                    marginRight: 35
-                                }}
-                                source={notip}/>
+                            <TouchableOpacity onPress={this.logout}>
+                                <Image
+                                    style={{
+                                        height: 40,
+                                        width: 35,
+                                        marginRight: 35
+                                    }}
+                                    source={notip}/>
+                            </TouchableOpacity>
                         </View>
                         <Text
                             style={{
