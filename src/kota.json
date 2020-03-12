@@ -1,0 +1,502 @@
+[
+  {
+    "id": "1",
+    "id_provinsi": "1",
+    "kota": "Denpasar"
+  },
+  {
+    "id": "2",
+    "id_provinsi": "2",
+    "kota": "Pangkalpinang"
+  },
+  {
+    "id": "3",
+    "id_provinsi": "3",
+    "kota": "Cilegon"
+  },
+  {
+    "id": "4",
+    "id_provinsi": "3",
+    "kota": "Serang"
+  },
+  {
+    "id": "5",
+    "id_provinsi": "3",
+    "kota": "Tangerang Selatan"
+  },
+  {
+    "id": "6",
+    "id_provinsi": "3",
+    "kota": "Tangerang"
+  },
+  {
+    "id": "7",
+    "id_provinsi": "4",
+    "kota": "Bengkulu"
+  },
+  {
+    "id": "8",
+    "id_provinsi": "5",
+    "kota": "Yogyakarta"
+  },
+  {
+    "id": "9",
+    "id_provinsi": "6",
+    "kota": "Jakarta Barat"
+  },
+  {
+    "id": "10",
+    "id_provinsi": "6",
+    "kota": "Jakarta Pusat"
+  },
+  {
+    "id": "11",
+    "id_provinsi": "6",
+    "kota": "Jakarta Selatan"
+  },
+  {
+    "id": "12",
+    "id_provinsi": "6",
+    "kota": "Jakarta Timur"
+  },
+  {
+    "id": "13",
+    "id_provinsi": "6",
+    "kota": "Jakarta Utara"
+  },
+  {
+    "id": "14",
+    "id_provinsi": "7",
+    "kota": "Gorontolo"
+  },
+  {
+    "id": "15",
+    "id_provinsi": "8",
+    "kota": "Sungai Penuh"
+  },
+  {
+    "id": "16",
+    "id_provinsi": "8",
+    "kota": "Jambi"
+  },
+  {
+    "id": "17",
+    "id_provinsi": "9",
+    "kota": "Bandung"
+  },
+  {
+    "id": "18",
+    "id_provinsi": "9",
+    "kota": "Bekasi"
+  },
+  {
+    "id": "19",
+    "id_provinsi": "9",
+    "kota": "Bogor"
+  },
+  {
+    "id": "20",
+    "id_provinsi": "9",
+    "kota": "Cimahi"
+  },
+  {
+    "id": "21",
+    "id_provinsi": "9",
+    "kota": "Cirebon"
+  },
+  {
+    "id": "22",
+    "id_provinsi": "9",
+    "kota": "Depok"
+  },
+  {
+    "id": "23",
+    "id_provinsi": "9",
+    "kota": "Sukabumi"
+  },
+  {
+    "id": "24",
+    "id_provinsi": "9",
+    "kota": "Tasikmalaya"
+  },
+  {
+    "id": "25",
+    "id_provinsi": "9",
+    "kota": "Banjar"
+  },
+  {
+    "id": "26",
+    "id_provinsi": "10",
+    "kota": "Magelang"
+  },
+  {
+    "id": "27",
+    "id_provinsi": "10",
+    "kota": "Pekalongan"
+  },
+  {
+    "id": "28",
+    "id_provinsi": "10",
+    "kota": "Purwokerto"
+  },
+  {
+    "id": "29",
+    "id_provinsi": "10",
+    "kota": "Salatiga"
+  },
+  {
+    "id": "30",
+    "id_provinsi": "10",
+    "kota": "Semarang"
+  },
+  {
+    "id": "31",
+    "id_provinsi": "10",
+    "kota": "Surakarta"
+  },
+  {
+    "id": "32",
+    "id_provinsi": "10",
+    "kota": "Tegal"
+  },
+  {
+    "id": "33",
+    "id_provinsi": "11",
+    "kota": "Batu"
+  },
+  {
+    "id": "34",
+    "id_provinsi": "11",
+    "kota": "Blitar"
+  },
+  {
+    "id": "35",
+    "id_provinsi": "11",
+    "kota": "Kediri"
+  },
+  {
+    "id": "36",
+    "id_provinsi": "11",
+    "kota": "Madiun"
+  },
+  {
+    "id": "37",
+    "id_provinsi": "11",
+    "kota": "Malang"
+  },
+  {
+    "id": "38",
+    "id_provinsi": "11",
+    "kota": "Mojokerto"
+  },
+  {
+    "id": "39",
+    "id_provinsi": "11",
+    "kota": "Pasuruan"
+  },
+  {
+    "id": "40",
+    "id_provinsi": "11",
+    "kota": "Probolinggo"
+  },
+  {
+    "id": "41",
+    "id_provinsi": "11",
+    "kota": "Surabaya"
+  },
+  {
+    "id": "42",
+    "id_provinsi": "12",
+    "kota": "Pontianak"
+  },
+  {
+    "id": "43",
+    "id_provinsi": "12",
+    "kota": "Singkawang"
+  },
+  {
+    "id": "44",
+    "id_provinsi": "13",
+    "kota": "Banjarbaru"
+  },
+  {
+    "id": "45",
+    "id_provinsi": "13",
+    "kota": "Banjarmasin"
+  },
+  {
+    "id": "46",
+    "id_provinsi": "14",
+    "kota": "Palangkaraya"
+  },
+  {
+    "id": "47",
+    "id_provinsi": "15",
+    "kota": "Balikpapan"
+  },
+  {
+    "id": "48",
+    "id_provinsi": "15",
+    "kota": "Bontang"
+  },
+  {
+    "id": "49",
+    "id_provinsi": "15",
+    "kota": "Samarinda"
+  },
+  {
+    "id": "50",
+    "id_provinsi": "16",
+    "kota": "Tarakan"
+  },
+  {
+    "id": "51",
+    "id_provinsi": "17",
+    "kota": "Batam"
+  },
+  {
+    "id": "52",
+    "id_provinsi": "17",
+    "kota": "Tanjungpinang"
+  },
+  {
+    "id": "53",
+    "id_provinsi": "18",
+    "kota": "Bandar Lampung"
+  },
+  {
+    "id": "54",
+    "id_provinsi": "18",
+    "kota": "Metro"
+  },
+  {
+    "id": "55",
+    "id_provinsi": "19",
+    "kota": "Ambon"
+  },
+  {
+    "id": "56",
+    "id_provinsi": "19",
+    "kota": "Tual"
+  },
+  {
+    "id": "57",
+    "id_provinsi": "20",
+    "kota": "Tidore Kepulauan"
+  },
+  {
+    "id": "58",
+    "id_provinsi": "20",
+    "kota": "Ternate"
+  },
+  {
+    "id": "59",
+    "id_provinsi": "21",
+    "kota": "Banda Aceh"
+  },
+  {
+    "id": "60",
+    "id_provinsi": "21",
+    "kota": "Langsa"
+  },
+  {
+    "id": "61",
+    "id_provinsi": "21",
+    "kota": "Lhokseumawe"
+  },
+  {
+    "id": "62",
+    "id_provinsi": "21",
+    "kota": "Meulaboh"
+  },
+  {
+    "id": "63",
+    "id_provinsi": "21",
+    "kota": "Sabang"
+  },
+  {
+    "id": "64",
+    "id_provinsi": "21",
+    "kota": "Subulussalam"
+  },
+  {
+    "id": "65",
+    "id_provinsi": "22",
+    "kota": "Bima"
+  },
+  {
+    "id": "66",
+    "id_provinsi": "22",
+    "kota": "Mataram"
+  },
+  {
+    "id": "67",
+    "id_provinsi": "23",
+    "kota": "Kupang"
+  },
+  {
+    "id": "68",
+    "id_provinsi": "24",
+    "kota": "Jayapura"
+  },
+  {
+    "id": "69",
+    "id_provinsi": "25",
+    "kota": "Sorong"
+  },
+  {
+    "id": "70",
+    "id_provinsi": "26",
+    "kota": "Pekanbaru"
+  },
+  {
+    "id": "71",
+    "id_provinsi": "26",
+    "kota": "Dumai"
+  },
+  {
+    "id": "72",
+    "id_provinsi": "27",
+    "kota": "Sulawesi barat"
+  },
+  {
+    "id": "73",
+    "id_provinsi": "28",
+    "kota": "Makassar"
+  },
+  {
+    "id": "74",
+    "id_provinsi": "28",
+    "kota": "Palopo"
+  },
+  {
+    "id": "75",
+    "id_provinsi": "28",
+    "kota": "Parepare"
+  },
+  {
+    "id": "76",
+    "id_provinsi": "29",
+    "kota": "Palu"
+  },
+  {
+    "id": "77",
+    "id_provinsi": "30",
+    "kota": "Bau-Bau"
+  },
+  {
+    "id": "78",
+    "id_provinsi": "30",
+    "kota": "Kendari"
+  },
+  {
+    "id": "79",
+    "id_provinsi": "31",
+    "kota": "Bitung"
+  },
+  {
+    "id": "80",
+    "id_provinsi": "31",
+    "kota": "Kotamobagu"
+  },
+  {
+    "id": "81",
+    "id_provinsi": "31",
+    "kota": "Manado"
+  },
+  {
+    "id": "82",
+    "id_provinsi": "31",
+    "kota": "Tomohon"
+  },
+  {
+    "id": "83",
+    "id_provinsi": "32",
+    "kota": "padang"
+  },
+  {
+    "id": "84",
+    "id_provinsi": "32",
+    "kota": "Padang Panjang"
+  },
+  {
+    "id": "85",
+    "id_provinsi": "32",
+    "kota": "Pariaman"
+  },
+  {
+    "id": "86",
+    "id_provinsi": "32",
+    "kota": "Payakumbuh"
+  },
+  {
+    "id": "87",
+    "id_provinsi": "32",
+    "kota": "Sawah Lunto"
+  },
+  {
+    "id": "88",
+    "id_provinsi": "32",
+    "kota": "Solok"
+  },
+  {
+    "id": "89",
+    "id_provinsi": "33",
+    "kota": "Lubuklinggau"
+  },
+  {
+    "id": "90",
+    "id_provinsi": "33",
+    "kota": "Pagar Alam"
+  },
+  {
+    "id": "91",
+    "id_provinsi": "33",
+    "kota": "Palembang"
+  },
+  {
+    "id": "92",
+    "id_provinsi": "33",
+    "kota": "Prabumulih"
+  },
+  {
+    "id": "93",
+    "id_provinsi": "34",
+    "kota": "Binjai"
+  },
+  {
+    "id": "94",
+    "id_provinsi": "34",
+    "kota": "Medan"
+  },
+  {
+    "id": "95",
+    "id_provinsi": "34",
+    "kota": "padang Sidempuan"
+  },
+  {
+    "id": "96",
+    "id_provinsi": "34",
+    "kota": "Pematang Siantar"
+  },
+  {
+    "id": "97",
+    "id_provinsi": "34",
+    "kota": "Sibolga"
+  },
+  {
+    "id": "98",
+    "id_provinsi": "34",
+    "kota": "Tanjung Balai"
+  },
+  {
+    "id": "99",
+    "id_provinsi": "34",
+    "kota": "Tebit Tinggi"
+  },
+  {
+    "id": "100",
+    "id_provinsi": "32",
+    "kota": "Bukittinggi"
+  }
+]
