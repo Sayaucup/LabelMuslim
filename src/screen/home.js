@@ -58,7 +58,7 @@ class home extends Component {
             nama_lengkap:'',
             id_user:'',
             jenis_kelamin:'',
-            selamat:moment().format('HH:mm'),
+            selamat:moment().format('HH:mm:ss'),
             kota:''
         }
     }
@@ -198,31 +198,31 @@ class home extends Component {
     }
     jenis_kelamin = ()=>{
         const {jenis_kelamin} = this.state
-        if (jenis_kelamin=== 'Laki - Laki'){
+        if (jenis_kelamin === 'Laki - Laki'){
             return(
-                <Text>Bpk</Text>
+                <Text>Bpk.</Text>
             )
-        } else if (jenis_kelamin=== 'Perempuan'){
+        } else if (jenis_kelamin === 'Perempuan'){
             return(
-                <Text>Ibu</Text>
+                <Text>Ibu.</Text>
             )
         }
     }
     selamat = () => {
         const {selamat} = this.state
-        if (selamat >='05:00' && selamat <='11:00'){
+        if (selamat >='05:00:00' && selamat <='11:00:00'){
             return(
                 <Text>Pagi</Text>
             )
-        }else if(selamat >='11:00' && selamat <='15:00'){
+        }else if(selamat >='11:00:00' && selamat <='15:00:00'){
             return(
                 <Text>Siang</Text>
             )
-        }else if (selamat >='15:00' && selamat <='18:00'){
+        }else if (selamat >='15:00:00' && selamat <='18:00:00'){
             return(
                 <Text>Sore</Text>
             )
-        }else if (selamat >='18:00' && selamat <='05:00'){
+        }else if (selamat >='18:00:00' && selamat <='05:00:00'){
             return(
                 <Text>Malam</Text>
             )
@@ -280,7 +280,7 @@ class home extends Component {
                         </Text>
                         <View
                             style={{
-                                height: 85,
+                                height: 95,
                                 width: '90%',
                                 backgroundColor: '#fff',
                                 marginTop: 10,
@@ -297,8 +297,8 @@ class home extends Component {
                                     <View
                                         style={{
                                             marginLeft: 15,
-                                            height: 60,
-                                            width: 60,
+                                            height: 66,
+                                            width: 66,
                                             borderRadius: 7,
                                             borderWidth: 2,
                                             borderColor: '#E8E8E8',
@@ -307,8 +307,8 @@ class home extends Component {
                                         }}>
                                         <Image
                                             style={{
-                                                height: 35,
-                                                width: 32,
+                                                height: 40,
+                                                width: 35,
                                                 borderRadius: 5
                                             }}
                                             source={schedule}/>
@@ -318,8 +318,8 @@ class home extends Component {
                                     <View
                                         style={{
                                             marginLeft: 10,
-                                            height: 60,
-                                            width: 60,
+                                            height: 66,
+                                            width: 66,
                                             borderRadius: 7,
                                             borderWidth: 2,
                                             borderColor: '#E8E8E8',
@@ -328,8 +328,8 @@ class home extends Component {
                                         }}>
                                         <Image
                                             style={{
-                                                height: 30,
-                                                width: 30,
+                                                height: 40,
+                                                width: 40,
                                                 borderRadius: 5
                                             }}
                                             source={plus}/>
@@ -337,13 +337,13 @@ class home extends Component {
                                 </TouchableOpacity>
                                 <View
                                     style={{
-                                        marginLeft: 13,
+                                        marginLeft: 10,
                                         maxWidth: 300
                                     }}>
                                     <Text
                                         style={{
                                             fontFamily: 'nunito.black',
-                                            fontSize: 18,
+                                            fontSize: 20,
                                             color: '#EE2020'
                                         }}>
                                         {moment().format('D MMMM YYYY')}
@@ -355,8 +355,8 @@ class home extends Component {
                                         }}>
                                         <Image
                                             style={{
-                                                height: 25,
-                                                width: 15
+                                                height: 30,
+                                                width: 18
                                             }}
                                             source={pin}/>
                                         <Text
@@ -364,7 +364,7 @@ class home extends Component {
                                                 fontFamily: 'nunito.black',
                                                 fontSize: 18,
                                                 textAlign:'center',
-                                                marginLeft: 8,
+                                                marginLeft: 5,
                                                 color: '#171717'
                                             }}>
                                             {this.state.kota}
@@ -381,7 +381,7 @@ class home extends Component {
                         }}>
                         <Text
                             style={{
-                                fontFamily: 'nunito.bold',
+                                fontFamily: 'nunito.black',
                                 fontSize: 16,
                                 color: '#171717'
                             }}>
@@ -401,7 +401,7 @@ class home extends Component {
                         }}>
                         <Text
                             style={{
-                                fontFamily: 'nunito.bold',
+                                fontFamily: 'nunito.black',
                                 fontSize: 16,
                                 color: '#171717'
                             }}>
@@ -426,7 +426,7 @@ class home extends Component {
                         <TouchableOpacity onPress={() => this.props.navigation.navigate('Daftar')}>
                             <Text
                                 style={{
-                                    fontFamily: 'nunito.bold',
+                                    fontFamily: 'nunito.black',
                                     fontSize: 14,
                                     color: '#538AE3'
                                 }}>

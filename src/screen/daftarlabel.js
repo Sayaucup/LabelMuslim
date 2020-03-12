@@ -59,6 +59,13 @@ const data = [
         close: close,
         date: '12 Januari 2019',
         detail: '6'
+    }, {
+        img: pt,
+        name: 'PT. GARUDA BANGSA INDONESIA',
+        desc: 'TOKO ONLINE',
+        close: close,
+        date: '12 Januari 2019',
+        detail: '7'
     }
 
 ]
@@ -87,7 +94,7 @@ class daftarlabel extends Component {
     Daftar = ({item}) => {
         const {img, name, desc, close, date} = item
         return (
-            <TouchableOpacity onPress={() => this.props.navigation.navigate('Detail')}>
+            <TouchableOpacity style={{bottom:10}} onPress={() => this.props.navigation.navigate('Detail')}>
                 <View
                     style={{
                         padding: 10,
@@ -194,7 +201,6 @@ class daftarlabel extends Component {
                         style={{
                             marginLeft: 20
                         }}>
-                        <TouchableOpacity>
                             <Text
                                 style={{
                                     fontSize: 20,
@@ -203,7 +209,6 @@ class daftarlabel extends Component {
                                 }}>
                                 Daftar Label
                             </Text>
-                        </TouchableOpacity>
                     </View>
                 </View>
                 <FlatList

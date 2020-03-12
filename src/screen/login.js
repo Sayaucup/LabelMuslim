@@ -62,6 +62,27 @@ class login extends Component {
             ToastAndroid.CENTER,
         );
     };
+    error = () => {
+        ToastAndroid.showWithGravity(
+            'diisi',
+            ToastAndroid.SHORT,
+            ToastAndroid.CENTER,
+        );
+    };
+    error2 = () => {
+        ToastAndroid.showWithGravity(
+            'Password and salah',
+            ToastAndroid.SHORT,
+            ToastAndroid.CENTER,
+        );
+    };
+    error3 = () => {
+        ToastAndroid.showWithGravity(
+            'Username and salah',
+            ToastAndroid.SHORT,
+            ToastAndroid.CENTER,
+        );
+    };
     lanjut = () => {
         this.toast()
         this
@@ -74,7 +95,7 @@ class login extends Component {
         fetch('http://labelmuslim.sipondok.com/api/login', {
             method: 'POST',
             headers: {
-                Accept: 'application/json',
+                'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({username: username, password: password})
@@ -90,11 +111,14 @@ class login extends Component {
                     AsyncStorage.setItem('api_key', resJson.api_key);
                     
                     this.lanjut()
-                } else if (resJson.data.password) {
-                    alert('must be filled');
+                } else if (resJson == 'Password anda salah') {
+                    this.error2()
+                }else if (resJson == 'Not Authorized') {
+                    this.error3()
                 }
             })
             .catch(error => {
+                this.error()
                 console.log(error);
             });
     };
@@ -147,7 +171,7 @@ class login extends Component {
                         </View>
                         <View
                             style={{
-                                marginTop: 55
+                                marginTop: 95
                             }}>
                             <View style={styles.viewTextInput}>
                                 <TextField
