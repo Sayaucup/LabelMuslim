@@ -85,6 +85,12 @@ class register extends Component {
         if (response == 'Berhasil') {
           console.log(response);
           this.back();
+        } else if (response.nama_lengkap) {
+          console.log(response.nama_lengkap);
+          this.setState({nama_eror: true});
+        } else if (response.password) {
+          console.log(response.password);
+          this.setState({password_eror: true});
         } else if (response.username) {
           console.log(response.username);
           this.username();
@@ -92,7 +98,6 @@ class register extends Component {
       })
       .catch(error => {
         console.log(error);
-        this.setState({error: 'error'});
       });
   };
   componentDidMount() {
@@ -256,18 +261,18 @@ class register extends Component {
       this.setState({kota_eror: false});
     }
     if (this.state.username === '') {
-      // this.setState({username_eror: true});
-      setTimeout(() => {
-        this.usernamenull();
-      }, 100);
+      this.setState({username_eror: true});
+      // setTimeout(() => {
+      //   this.usernamenull();
+      // }, 100);
     } else {
       this.setState({username_eror: false});
     }
     if (this.state.password === '') {
-      // this.setState({password_eror: true});
-      setTimeout(() => {
-        this.passwordnull();
-      }, 2000);
+      this.setState({password_eror: true});
+      // setTimeout(() => {
+      //   this.passwordnull();
+      // }, 2000);
     } else {
       this.setState({password_eror: false});
     }
@@ -415,11 +420,9 @@ class register extends Component {
                     borderRadius: 10,
                   }}
                   itemTextStyle={{
-                    borderColor: '#fff',
-                    borderRadius: 5,
                     paddingVertical: 7,
                     paddingLeft: 10,
-                    borderWidth: 1,
+                    fontFamily: 'nunito.bold',
                   }}
                   dropdownMargins={{min: 20}}
                   shadeOpacity={0.12}
@@ -549,6 +552,22 @@ class register extends Component {
                   baseColor="#fff"
                   fontSize={18}
                 />
+                {this.state.username_eror === true ? (
+                  <View
+                    style={{
+                      position: 'absolute',
+                      width: '100%',
+                      alignItems: 'flex-end',
+                      justifyContent: 'center',
+                      height: '100%',
+                    }}>
+                    <View style={{backgroundColor: '#4A86E8'}}>
+                      <Icon name="error" size={30} color="red" />
+                    </View>
+                  </View>
+                ) : (
+                  <View />
+                )}
               </View>
               <View style={styles.viewTextInput2}>
                 <TextField
@@ -563,7 +582,22 @@ class register extends Component {
                   fontSize={18}
                   secureTextEntry={this.state.hidePassword}
                 />
-
+                {this.state.password_eror === true ? (
+                  <View
+                    style={{
+                      position: 'absolute',
+                      width: '100%',
+                      alignItems: 'flex-end',
+                      justifyContent: 'center',
+                      height: '100%',
+                    }}>
+                    <View style={{backgroundColor: '#4A86E8'}}>
+                      <Icon name="error" size={30} color="red" />
+                    </View>
+                  </View>
+                ) : (
+                  <View />
+                )}
                 <TouchableOpacity
                   activeOpacity={0.8}
                   style={styles.positionHide}
