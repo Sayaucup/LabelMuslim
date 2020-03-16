@@ -389,104 +389,94 @@ class register extends Component {
                   fontSize={18}
                 />
                 {this.state.nama_eror === true ? (
-                  <View
+                  <Text
                     style={{
-                      position: 'absolute',
-                      width: '100%',
-                      alignItems: 'flex-end',
-                      justifyContent: 'center',
-                      height: '100%',
+                      color: 'red',
+                      fontSize: 12,
+                      top: -10,
+                      fontFamily: 'nunito.bold',
                     }}>
-                    <View style={{backgroundColor: '#4A86E8'}}>
-                      <Icon name="error" size={30} color="red" />
-                    </View>
-                  </View>
+                    Nama lengkap tidak valid
+                  </Text>
                 ) : (
                   <View />
                 )}
               </View>
               <View
                 style={{
-                  alignItems: 'center',
+                  alignContent: 'center',
                 }}>
-                <Dropdown
-                  onChangeText={text => this.setState({jenis_kelamin: text})}
-                  value={this.state.jenis_kelamin}
-                  containerStyle={{
-                    width: '85%',
-                  }}
-                  pickerStyle={{
-                    backgroundColor: '#4A86E8',
-                    borderRadius: 10,
-                  }}
-                  itemTextStyle={{
-                    paddingVertical: 7,
-                    paddingLeft: 10,
-                    fontFamily: 'nunito.bold',
-                  }}
-                  dropdownMargins={{min: 20}}
-                  shadeOpacity={0.12}
-                  label="Jenis Kelamin"
-                  baseColor="#fff"
-                  textColor="#fff"
-                  dropdownOffset={{
-                    top: 12,
-                    left: 0,
-                  }}
-                  dropdownPosition={-3}
-                  fontSize={18}
-                  data={JenisKelamin}
-                />
-                {this.state.jenis_eror === true ? (
-                  <View
-                    style={{
-                      position: 'absolute',
-                      paddingRight: '7%',
-                      width: '100%',
-                      alignItems: 'flex-end',
-                      justifyContent: 'center',
-                      height: '100%',
-                    }}>
-                    <View style={{backgroundColor: '#4A86E8'}}>
-                      <Icon name="error" size={30} color="red" />
-                    </View>
-                  </View>
-                ) : (
-                  <View />
-                )}
+                <View style={styles.viewTextInput}>
+                  <Dropdown
+                    onChangeText={text => this.setState({jenis_kelamin: text})}
+                    value={this.state.jenis_kelamin}
+                    pickerStyle={{
+                      backgroundColor: '#4A86E8',
+                      borderRadius: 10,
+                    }}
+                    itemTextStyle={{
+                      paddingVertical: 7,
+                      paddingLeft: 10,
+                      fontFamily: 'nunito.bold',
+                    }}
+                    dropdownMargins={{min: 20}}
+                    shadeOpacity={0.12}
+                    label="Jenis Kelamin"
+                    baseColor="#fff"
+                    textColor="#fff"
+                    dropdownOffset={{
+                      top: 12,
+                      left: 0,
+                    }}
+                    dropdownPosition={-3}
+                    fontSize={18}
+                    data={JenisKelamin}
+                  />
+                  {this.state.jenis_eror === true ? (
+                    <Text
+                      style={{
+                        color: 'red',
+                        top: -10,
+                        fontFamily: 'nunito.bold',
+                        fontSize: 12,
+                      }}>
+                      Pilih salah satu
+                    </Text>
+                  ) : (
+                    <View />
+                  )}
+                </View>
               </View>
               <View
                 style={{
                   alignSelf: 'center',
                   justifyContent: 'center',
                   width: '85%',
-                  borderBottomWidth: 0.3,
-                  borderBottomColor: '#fff',
                   height: 50,
                 }}>
                 <TouchableOpacity
                   onPress={() => this.setState({modalprovinsi: true})}>
-                  {this.provinsi()}
-                  <TextInput
-                    placeholder="Provinsi"
-                    placeholderTextColor="#fff"
+                  <TextField
+                    defaultValue={this.state.provinsi}
+                    textColor="#fff"
+                    label="Provinsi"
                     editable={false}
-                    value={this.state.provinsi}
-                    style={{color: '#fff', fontSize: 18, left: -5}}
+                    lineWidth={0.7}
+                    activeLineWidth={0.7}
+                    tintColor="#fff"
+                    baseColor="#fff"
+                    fontSize={18}
                   />
                   {this.state.provinsi_eror === true ? (
-                    <View
+                    <Text
                       style={{
-                        position: 'absolute',
-                        width: '100%',
-                        alignItems: 'flex-end',
-                        justifyContent: 'center',
-                        height: '100%',
+                        color: 'red',
+                        fontSize: 12,
+                        fontFamily: 'nunito.bold',
+                        top: -10,
                       }}>
-                      <View style={{backgroundColor: '#4A86E8'}}>
-                        <Icon name="error" size={30} color="red" />
-                      </View>
-                    </View>
+                      Pilih salah satu
+                    </Text>
                   ) : (
                     <View />
                   )}
@@ -498,32 +488,30 @@ class register extends Component {
                   alignSelf: 'center',
                   justifyContent: 'center',
                   width: '85%',
-                  borderBottomWidth: 0.3,
-                  borderBottomColor: '#fff',
-                  height: 50,
+                  height: 70,
                 }}>
                 <TouchableOpacity onPress={() => this.kota_kosong()}>
-                  {this.kota()}
-                  <TextInput
-                    placeholder="kota "
-                    placeholderTextColor="#fff"
+                  <TextField
+                    defaultValue={this.state.kota}
+                    textColor="#fff"
+                    label="Kota"
+                    lineWidth={0.7}
                     editable={false}
-                    value={this.state.kota}
-                    style={{color: '#fff', fontSize: 18, left: -5}}
+                    activeLineWidth={0.7}
+                    tintColor="#fff"
+                    baseColor="#fff"
+                    fontSize={18}
                   />
                   {this.state.kota_eror === true ? (
-                    <View
+                    <Text
                       style={{
-                        position: 'absolute',
-                        width: '100%',
-                        alignItems: 'flex-end',
-                        justifyContent: 'center',
-                        height: '100%',
+                        color: 'red',
+                        fontFamily: 'nunito.bold',
+                        fontSize: 12,
+                        top: -10,
                       }}>
-                      <View style={{backgroundColor: '#4A86E8'}}>
-                        <Icon name="error" size={30} color="red" />
-                      </View>
-                    </View>
+                      Pilih salah satu
+                    </Text>
                   ) : (
                     <View />
                   )}
@@ -553,18 +541,15 @@ class register extends Component {
                   fontSize={18}
                 />
                 {this.state.username_eror === true ? (
-                  <View
+                  <Text
                     style={{
-                      position: 'absolute',
-                      width: '100%',
-                      alignItems: 'flex-end',
-                      justifyContent: 'center',
-                      height: '100%',
+                      color: 'red',
+                      fontSize: 12,
+                      top: -10,
+                      fontFamily: 'nunito.bold',
                     }}>
-                    <View style={{backgroundColor: '#4A86E8'}}>
-                      <Icon name="error" size={30} color="red" />
-                    </View>
-                  </View>
+                    Username tidak valid
+                  </Text>
                 ) : (
                   <View />
                 )}
@@ -583,18 +568,15 @@ class register extends Component {
                   secureTextEntry={this.state.hidePassword}
                 />
                 {this.state.password_eror === true ? (
-                  <View
+                  <Text
                     style={{
-                      position: 'absolute',
-                      width: '100%',
-                      alignItems: 'flex-end',
-                      justifyContent: 'center',
-                      height: '100%',
+                      color: 'red',
+                      top: -10,
+                      fontFamily: 'nunito.bold',
+                      fontSize: 12,
                     }}>
-                    <View style={{backgroundColor: '#4A86E8'}}>
-                      <Icon name="error" size={30} color="red" />
-                    </View>
-                  </View>
+                    Password tidak valid
+                  </Text>
                 ) : (
                   <View />
                 )}

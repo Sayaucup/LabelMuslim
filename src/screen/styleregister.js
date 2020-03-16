@@ -42,7 +42,7 @@ const styles = StyleSheet.create ({
         tintColor: '#fff'
     },
     viewDaftar : {
-        marginTop:50,
+        marginTop:70,
         paddingVertical: 13,
         width: '75%',
         backgroundColor: '#5C97F7',

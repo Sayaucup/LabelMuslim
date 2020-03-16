@@ -162,7 +162,8 @@ class login extends Component {
         <Snackbar
           visible={this.state.snackIsVisible}
           //SnackBar visibility control
-          textMessage="daftar sekarang"
+          textMessage="Tidak punya akun ?
+          DAFTAR SEKARANG "
           //Text on SnackBar
           actionHandler={() => {
             //function called while clicking on action Text
@@ -177,7 +178,7 @@ class login extends Component {
               snackIsVisible: !this.state.snackIsVisible,
             });
           }}
-          actionText="ok !"
+          actionText="GO !"
           //action Text to print on SnackBar
           distanceCallback={distance => {
             //Number indicating distance taken up by snackbar
@@ -212,18 +213,7 @@ class login extends Component {
                   fontSize={18}
                 />
                 {this.state.username_eror === true ? (
-                  <View
-                    style={{
-                      position: 'absolute',
-                      width: '100%',
-                      alignItems: 'flex-end',
-                      justifyContent: 'center',
-                      height: '100%',
-                    }}>
-                    <View style={{backgroundColor: '#4A86E8'}}>
-                      <Icon name="error" size={30} color="red" />
-                    </View>
-                  </View>
+                  <Text style={{fontSize:12,color:'red',fontFamily:'nunito.bold'}}>Mohon memasukkan username yang valid</Text>
                 ) : (
                   <View />
                 )}
@@ -243,18 +233,7 @@ class login extends Component {
                   secureTextEntry={this.state.hidePassword}
                 />
                 {this.state.password_eror === true ? (
-                  <View
-                    style={{
-                      position: 'absolute',
-                      width: '100%',
-                      alignItems: 'flex-end',
-                      justifyContent: 'center',
-                      height: '100%',
-                    }}>
-                    <View style={{backgroundColor: '#4A86E8'}}>
-                      <Icon name="error" size={30} color="red" />
-                    </View>
-                  </View>
+                  <Text style={{fontSize:12,fontFamily:'nunito.bold',color:'red'}}>Format password salah</Text>
                 ) : (
                   <View />
                 )}
