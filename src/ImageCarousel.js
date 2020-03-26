@@ -60,11 +60,12 @@ export default class ImageCarousel extends Component {
                             .numberCarousel
                             .scrollToIndex(index);
                     }}>
-                    <Image
+                    <View style={styles.imageBackground}/>
+                    {/* <Image
                         source={{
                             uri: uri
                         }}
-                        style={styles.imageBackground}/> 
+                        style={styles.imageBackground}/>  */}
                         {/* <View style={styles.rightTextContainer}>
                         <Text style={styles.rightText}>Riyadi</Text>
                     </View> */
@@ -108,8 +109,8 @@ const styles = StyleSheet.create({
     },
     imageBackground: {
         flex: 2,
-        backgroundColor: '#fff',
-        borderWidth: 5,
+        backgroundColor: '#f2f2f2',
+        borderWidth: 3,
         borderRadius: 20,
         height: '100%',
         borderColor: '#61dbfb'

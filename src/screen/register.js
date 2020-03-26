@@ -11,6 +11,7 @@ import {
   StatusBar,
   ToastAndroid,
   Modal,
+  FlatList,
 } from 'react-native';
 import {Dropdown} from 'react-native-material-dropdown';
 import {TextField} from 'react-native-material-textfield';
@@ -20,8 +21,6 @@ import bg from '../assets/background.jpeg';
 import Logo from '../assets/Logo.png';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import Iconn from 'react-native-vector-icons/SimpleLineIcons';
-
-import {FlatList} from 'react-native-gesture-handler';
 
 import Prov from '../provinsi.json';
 import Kota from '../kota.json';
@@ -49,6 +48,7 @@ class register extends Component {
       password: '',
       modalkota: false,
       modalprovinsi: false,
+      modaljeniskelamin: false,
       data: [],
       provinsi: '',
       id_provinsi: '',
@@ -277,6 +277,22 @@ class register extends Component {
       this.setState({password_eror: false});
     }
   };
+  Tipee = ({item}) => {
+    return (
+      <View
+        style={{
+          padding: 10,
+          left: 15,
+        }}>
+        <TouchableOpacity
+          onPress={() => this.setState({jenis_kelamin: item.value, modaljeniskelamin: false})}>
+          <Text style={{fontFamily: 'nunito.regular', fontSize: 20}}>
+            {item.value}
+          </Text>
+        </TouchableOpacity>
+      </View>
+    );
+  };
   render() {
     return (
       <View
@@ -360,6 +376,43 @@ class register extends Component {
             />
           </View>
         </Modal>
+        <Modal transparent visible={this.state.modaljeniskelamin}>
+          <View
+            style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+            <View
+              style={{
+                height: '25%',
+                width: '60%',
+                backgroundColor: '#fff',
+                borderRadius: 20,
+              }}>
+              <Text
+                style={{
+                  top: 15,
+                  fontSize: 20,
+                  alignSelf: 'center',
+                  fontFamily: 'nunito.black',
+                }}>
+                Jenis Kelamin
+              </Text>
+              <View
+                style={{
+                  height: 2,
+                  backgroundColor: '#f2f2f2',
+                  top: 25,
+                  marginHorizontal: 10,
+                }}
+              />
+              <View style={{top:30}}>
+              <FlatList
+                data={JenisKelamin}
+                renderItem={this.Tipee}
+                keyExtractor={item => item.toString()}
+              />
+              </View>
+            </View>
+          </View>
+        </Modal>
         <StatusBar backgroundColor="#F2F1F1" />
         <ScrollView showsVerticalScrollIndicator={false}>
           <ImageBackground style={styles.background} source={bg}>
@@ -404,6 +457,41 @@ class register extends Component {
               </View>
               <View
                 style={{
+                  alignSelf: 'center',
+                  justifyContent: 'center',
+                  width: '85%',
+                  height: 40,
+                }}>
+                <TouchableOpacity
+                  onPress={() => this.setState({modaljeniskelamin: true})}>
+                  <TextField
+                    defaultValue={this.state.jenis_kelamin}
+                    textColor="#fff"
+                    label="Jenis Kelamin"
+                    editable={false}
+                    lineWidth={0.7}
+                    activeLineWidth={0.7}
+                    tintColor="#fff"
+                    baseColor="#fff"
+                    fontSize={18}
+                  />
+                  {this.state.jenis_eror === true ? (
+                    <Text
+                      style={{
+                        color: 'red',
+                        fontSize: 12,
+                        fontFamily: 'nunito.bold',
+                        top: -10,
+                      }}>
+                      Pilih salah satu
+                    </Text>
+                  ) : (
+                    <View />
+                  )}
+                </TouchableOpacity>
+              </View>
+              {/* <View
+                style={{
                   alignContent: 'center',
                 }}>
                 <View style={styles.viewTextInput}>
@@ -444,15 +532,17 @@ class register extends Component {
                     </Text>
                   ) : (
                     <View />
-                  )}
+                    )}
+                  
                 </View>
-              </View>
+              </View> */}
               <View
                 style={{
                   alignSelf: 'center',
                   justifyContent: 'center',
                   width: '85%',
                   height: 50,
+                  top: 10,
                 }}>
                 <TouchableOpacity
                   onPress={() => this.setState({modalprovinsi: true})}>
@@ -489,6 +579,7 @@ class register extends Component {
                   justifyContent: 'center',
                   width: '85%',
                   height: 70,
+                  top: 10,
                 }}>
                 <TouchableOpacity onPress={() => this.kota_kosong()}>
                   <TextField
