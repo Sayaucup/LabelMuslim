@@ -69,7 +69,7 @@ class progressatu extends Component {
               style={{
                 height: '52%',
                 width: '60%',
-                backgroundColor: '#000',
+                backgroundColor: '#fff',
                 borderRadius: 20,
               }}>
               <Text

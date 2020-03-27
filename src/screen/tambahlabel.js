@@ -115,7 +115,6 @@ class tambahlabel extends Component {
             </TouchableOpacity>
           </View>
         </View>
-        <ScrollView showsVerticalScrollIndicator={false}>
           <ProgressSteps {...progressStepsStyle}>
             <ProgressStep
               label="Data Usaha"
@@ -167,7 +166,6 @@ class tambahlabel extends Component {
               </View>
             </ProgressStep>
           </ProgressSteps>
-        </ScrollView>
       </View>
     );
   }
